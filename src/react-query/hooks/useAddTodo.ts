@@ -9,7 +9,7 @@ interface AddTodoContext {
 const useAddTodo = (onAdd: () => void) => {
     const queryClient = useQueryClient();
 
-    return useMutation<Todo, Error, Todo, AddTodoContext>({
+    return useMutation<Todo, Error, Todo, any>({
         mutationFn: todoService.post,
         onMutate: (newTodo) => {
             const previousTodos =
